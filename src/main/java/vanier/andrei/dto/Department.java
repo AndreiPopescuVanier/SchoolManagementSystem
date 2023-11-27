@@ -1,8 +1,5 @@
 package vanier.andrei.dto;
 
-import lombok.*;
-
-@AllArgsConstructor
 public class Department {
     private static int nextId = 1;
 

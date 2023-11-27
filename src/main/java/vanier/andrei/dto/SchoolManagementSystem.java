@@ -18,4 +18,60 @@ public class SchoolManagementSystem {
         this.teachers = new Teacher[maxTeachers];
         this.courses = new Course[maxCourses];
     }
+
+    public void addDepartment(String deptName) {
+
+    }
+
+    public void addStudent(String firstName, String lastName, String departmentId) {
+
+    }
+
+    public void addCourse(String name, double credit, String departmentId) {
+
+    }
+
+    public void addTeacher(String firstName, String lastName, String departmentId) {
+
+    }
+
+    public Department findDepartment(String id) {
+
+    }
+
+    public Student findStudent(String id) {
+
+    }
+
+    public Course findCourse(String id) {
+
+    }
+
+    public Teacher findTeacher(String id) {
+
+    }
+
+    public void printDepartments() {
+
+    }
+
+    public void printCourses() {
+
+    }
+
+    public void printStudents() {
+
+    }
+
+    public void printTeachers() {
+
+    }
+
+    public void registerCourse(String studentId, String courseId) {
+
+    }
+
+    public void modifyCourseTeacher(String teacherIdToModify, String newCourseId) {
+
+    }
 }
