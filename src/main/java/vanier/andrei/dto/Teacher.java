@@ -10,7 +10,7 @@ public class Teacher {
     @Getter private String id;
     private String firstName;
     private String lastName;
-    private Department department;
+    @Getter private Department department;
 
     public Teacher(String firstName, String lastName, Department department) {
 

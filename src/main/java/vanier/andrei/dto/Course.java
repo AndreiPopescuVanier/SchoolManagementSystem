@@ -5,7 +5,7 @@ import lombok.*;
 @ToString
 @EqualsAndHashCode
 public class Course {
-    private final int MAX_STUDENT_COUNT = 5;
+    @Getter private static final int MAX_STUDENT_COUNT = 5;
 
     private static int nextId = 1;
 
@@ -14,9 +14,9 @@ public class Course {
     private double credit;
 
     private Department department;
-    @Setter private Teacher teacher;
-    private Student[] students;
-    private int studentCount;
+    @Getter @Setter private Teacher teacher;
+    @Getter @Setter private Student[] students;
+    @Getter private int studentCount;
 
     public Course(String name, double credit, Department department) {
 

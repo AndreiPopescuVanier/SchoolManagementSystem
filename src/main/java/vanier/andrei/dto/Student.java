@@ -14,8 +14,8 @@ public class Student {
     private String lastName;
     private Department department;
 
-    private Course[] courses;
-    private int courseCount;
+    @Getter @Setter private Course[] courses;
+    @Getter private int courseCount;
 
     public Student(String firstName, String lastName, Department department) {
 
