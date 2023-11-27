@@ -1,7 +1,7 @@
 package vanier.andrei.dto;
 
 public class Course {
-    private final int MAX_STUDENT_NUM = 5;
+    private final int MAX_STUDENT_COUNT = 5;
 
     private static int nextId = 1;
 
