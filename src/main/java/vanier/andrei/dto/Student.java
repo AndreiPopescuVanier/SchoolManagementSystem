@@ -1,11 +1,15 @@
 package vanier.andrei.dto;
 
+import lombok.*;
+
+@ToString
+@EqualsAndHashCode
 public class Student {
     private final int MAX_COURSE_COUNT = 5;
 
     private static int nextId = 1;
 
-    private String id;
+    @Getter private String id;
     private String firstName;
     private String lastName;
     private Department department;
@@ -13,9 +17,7 @@ public class Student {
     private Course[] courses;
     private int courseCount;
 
-    // Not sure if we can use lombok here
-    @Override
-    public String toString() {
-        return "";
+    public Student(String firstName, String lastName, Department department) {
+
     }
 }

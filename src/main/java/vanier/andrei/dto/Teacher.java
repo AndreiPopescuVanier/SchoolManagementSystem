@@ -1,16 +1,18 @@
 package vanier.andrei.dto;
 
+import lombok.*;
+
+@ToString
+@EqualsAndHashCode
 public class Teacher {
     private static int nextId = 1;
 
-    private String id;
+    @Getter private String id;
     private String firstName;
     private String lastName;
     private Department department;
 
-    // Not sure if we can use lombok here
-    @Override
-    public String toString() {
-        return "";
+    public Teacher(String firstName, String lastName, Department department) {
+
     }
 }
