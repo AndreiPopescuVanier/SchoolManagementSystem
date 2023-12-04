@@ -14,7 +14,7 @@ public class Student {
     private String lastName;
     private Department department;
 
-    @Getter @Setter private Course[] courses;
+    @Getter private Course[] courses;
     @Getter private int courseCount;
 
     public Student(String firstName, String lastName, Department department) {
@@ -22,5 +22,19 @@ public class Student {
         this.lastName = lastName;
         this.department = department;
         this.id = "S" + String.format("%03d", nextId++);
+        this.courses = new Course[MAX_COURSE_COUNT];
+        this.courseCount = 0;
+    }
+
+    public void setCourses(Course[] courses) {
+        this.courses = courses;
+
+        for (int i = 0; i < courses.length; i++) {
+            // Because our array is gap-less, first null indicates end
+            if (courses[i] == null) {
+                courseCount = i + 1;
+                return;
+            }
+        }
     }
 }

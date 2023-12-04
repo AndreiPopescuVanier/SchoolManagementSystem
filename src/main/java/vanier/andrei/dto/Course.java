@@ -23,6 +23,8 @@ public class Course {
         this.credit = credit;
         this.department = department;
         this.id = "C" + String.format("%03d", nextId++);
+        this.students = new Student[MAX_STUDENT_COUNT];
+        this.studentCount = 0;
     }
 
     public void setStudents(Student[] students) {
