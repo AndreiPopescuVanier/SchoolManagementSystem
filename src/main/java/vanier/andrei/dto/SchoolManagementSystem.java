@@ -25,7 +25,7 @@ public class SchoolManagementSystem {
      * @param deptName Name of the new department to create
      */
     public void addDepartment(String deptName) {
-        int indexOfFirstNullDept = 0;
+        int indexOfFirstNullDept = -1;
 
         for (int i = 0; i < departments.length; i++) {
             if (departments[i] == null) {
@@ -34,7 +34,7 @@ public class SchoolManagementSystem {
             }
         }
 
-        if (indexOfFirstNullDept == MAX_DEPARTMENTS - 1) {
+        if (indexOfFirstNullDept == -1) {
             System.out.println("Max department count reached, add a new department failed");
             return;
         }
@@ -51,7 +51,7 @@ public class SchoolManagementSystem {
      * @param departmentId Department ID of student (Dxxx)
      */
     public void addStudent(String firstName, String lastName, String departmentId) {
-        int indexOfFirstNullStudent = 0;
+        int indexOfFirstNullStudent = -1;
 
         for (int i = 0; i < students.length; i++) {
             if (students[i] == null) {
@@ -60,7 +60,7 @@ public class SchoolManagementSystem {
             }
         }
 
-        if (indexOfFirstNullStudent == MAX_STUDENTS - 1) {
+        if (indexOfFirstNullStudent == -1) {
             System.out.println("Max student count reached, add a new student failed");
             return;
         }
@@ -84,7 +84,7 @@ public class SchoolManagementSystem {
      * @param departmentId Department ID of the course (Dxxx)
      */
     public void addCourse(String name, double credit, String departmentId) {
-        int indexOfFirstNullCourse = 0;
+        int indexOfFirstNullCourse = -1;
 
         for (int i = 0; i < courses.length; i++) {
             if (courses[i] == null) {
@@ -93,7 +93,7 @@ public class SchoolManagementSystem {
             }
         }
 
-        if (indexOfFirstNullCourse == MAX_COURSES - 1) {
+        if (indexOfFirstNullCourse == -1) {
             System.out.println("Max course count reached, add a new course failed");
             return;
         }
@@ -117,7 +117,7 @@ public class SchoolManagementSystem {
      * @param departmentId Department ID of the teacher (Dxxx)
      */
     public void addTeacher(String firstName, String lastName, String departmentId) {
-        int indexOfFirstNullTeacher = 0;
+        int indexOfFirstNullTeacher = -1;
 
         for (int i = 0; i < teachers.length; i++) {
             if (teachers[i] == null) {
@@ -126,7 +126,7 @@ public class SchoolManagementSystem {
             }
         }
 
-        if (indexOfFirstNullTeacher == MAX_TEACHERS - 1) {
+        if (indexOfFirstNullTeacher == -1) {
             System.out.println("Max teacher count reached, add a new teacher failed");
             return;
         }
