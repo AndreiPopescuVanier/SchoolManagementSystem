@@ -39,7 +39,9 @@ public class SchoolManagementSystem {
             return;
         }
 
-        departments[indexOfFirstNullDept] = new Department(deptName);
+        Department newDept = new Department(deptName);
+        departments[indexOfFirstNullDept] = newDept;
+        System.out.printf("Added department %s successfully!\n", newDept);
     }
 
     /**
@@ -70,7 +72,9 @@ public class SchoolManagementSystem {
             return;
         }
 
-        students[indexOfFirstNullStudent] = new Student(firstName, lastName, departmentOfStudent);
+        Student newStudent = new Student(firstName, lastName, departmentOfStudent);
+        students[indexOfFirstNullStudent] = newStudent;
+        System.out.printf("Added student %s successfull!", newStudent);
     }
 
     /**
@@ -101,7 +105,9 @@ public class SchoolManagementSystem {
             return;
         }
 
-        courses[indexOfFirstNullCourse] = new Course(name, credit, departmentOfCourse);
+        Course newCourse = new Course(name, credit, departmentOfCourse);
+        courses[indexOfFirstNullCourse] = newCourse;
+        System.out.printf("Added course %s successfully!\n", newCourse);
     }
 
     /**
@@ -132,7 +138,9 @@ public class SchoolManagementSystem {
             return;
         }
 
-        teachers[indexOfFirstNullTeacher] = new Teacher(firstName, lastName, departmentOfTeacher);
+        Teacher newTeacher = new Teacher(firstName, lastName, departmentOfTeacher);
+        teachers[indexOfFirstNullTeacher] = newTeacher;
+        System.out.printf("Added teacher %s successfully!", newTeacher);
     }
 
     /**
@@ -306,6 +314,10 @@ public class SchoolManagementSystem {
         Student[] currentStudents = course.getStudents();
         currentStudents[course.getStudentCount()] = student;
         course.setStudents(currentStudents);
+
+        System.out.println("Registered student with course successfully!");
+        System.out.printf("Latest student info: %s\n", student);
+        System.out.printf("Latest course info: %s\n", course);
     }
 
     /**
@@ -327,5 +339,6 @@ public class SchoolManagementSystem {
         }
 
         course.setTeacher(teacher);
+        System.out.printf("%s teacher info updated successfully!\n", course);
     }
 }
