@@ -231,6 +231,8 @@ public class SchoolManagementSystem {
      * Prints all existing departments.
      */
     public void printDepartments() {
+        System.out.println("Displaying all departments:\n-----------------");
+
         for (Department department : departments) {
             if (department == null) {
                 return;
@@ -244,6 +246,8 @@ public class SchoolManagementSystem {
      * Prints all existing courses.
      */
     public void printCourses() {
+        System.out.println("Displaying all courses:\n-----------------");
+
         for (Course course : courses) {
             if (course == null) {
                 return;
@@ -257,6 +261,8 @@ public class SchoolManagementSystem {
      * Prints all existing students.
      */
     public void printStudents() {
+        System.out.println("Displaying all students:\n-----------------");
+
         for (Student student : students) {
             if (student == null) {
                 return;
@@ -270,6 +276,8 @@ public class SchoolManagementSystem {
      * Prints all existing teachers.
      */
     public void printTeachers() {
+        System.out.println("Displaying all teachers:\n-----------------");
+
         for (Teacher teacher : teachers) {
             if (teacher == null) {
                 return;
@@ -287,27 +295,42 @@ public class SchoolManagementSystem {
     public void registerCourse(String studentId, String courseId) {
         Student student = findStudent(studentId);
         if (student == null) {
-            System.out.printf("Could not register course, student ID %s does not exist\n", studentId);
+            System.out.printf("Cannot find a student with matching ID %s, register course for student %s failed\n",
+                    studentId, studentId);
             return;
         }
 
         Course course = findCourse(courseId);
         if (course == null) {
-            System.out.printf("Could not register course, course ID %s does not exist\n", courseId);
+            System.out.printf("Cannot find a course with matching ID %s, register course for student %s failed\n",
+                    courseId, studentId);
             return;
         }
 
         if (student.getCourseCount() == Student.MAX_COURSE_COUNT) {
-            System.out.println("Could not register course, student already has maximum course count");
+            System.out.printf("Student %s has already registered %d courses, register course for student %s failed\n",
+                    studentId, Student.MAX_COURSE_COUNT, studentId);
             return;
         }
 
         if (course.getStudentCount() == Course.MAX_STUDENT_COUNT) {
-            System.out.println("Could not register course, course already has maximum student count");
+            System.out.printf("Course %s has been fully registered, register course %s for student %s failed\n",
+                    courseId, courseId, studentId);
             return;
         }
 
         Course[] currentCourses = student.getCourses();
+
+        // Bonus check, if student already has this registered
+        for (Course currentCourse : currentCourses) {
+            // Same reference, no need .equals()
+            if (course == currentCourse) {
+                System.out.printf("Student %s has already registered course %s, register course %s for student %s failed\n",
+                        studentId, courseId, courseId, studentId);
+                return;
+            }
+        }
+
         currentCourses[student.getCourseCount()] = course;
         student.setCourses(currentCourses);
 
@@ -328,13 +351,15 @@ public class SchoolManagementSystem {
     public void modifyCourseTeacher(String newTeacherId, String courseId) {
         Teacher teacher = findTeacher(newTeacherId);
         if (teacher == null) {
-            System.out.printf("Could not assign teacher, teacher ID %s does not exist\n", newTeacherId);
+            System.out.printf("Cannot find any course matching ID %s, modifying teacher for course %s failed\n",
+                    courseId, courseId);
             return;
         }
 
         Course course = findCourse(courseId);
         if (course == null) {
-            System.out.printf("Could not assign teacher, course ID %s does not exist\n", courseId);
+            System.out.printf("Cannot find any teacher matching ID %s, modifying teacher for course %s failed\n",
+                    newTeacherId, courseId);
             return;
         }
 
