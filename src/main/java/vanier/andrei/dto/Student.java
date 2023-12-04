@@ -5,7 +5,7 @@ import lombok.*;
 @ToString
 @EqualsAndHashCode
 public class Student {
-    private final int MAX_COURSE_COUNT = 5;
+    public static final int MAX_COURSE_COUNT = 5;
 
     private static int nextId = 1;
 
