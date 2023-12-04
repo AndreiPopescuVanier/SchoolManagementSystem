@@ -13,6 +13,9 @@ public class Teacher {
     @Getter private Department department;
 
     public Teacher(String firstName, String lastName, Department department) {
-
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.department = department;
+        this.id = "T" + String.format("%03d", nextId++);
     }
 }
