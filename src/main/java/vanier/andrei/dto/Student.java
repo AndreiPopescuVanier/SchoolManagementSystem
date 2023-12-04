@@ -18,6 +18,9 @@ public class Student {
     @Getter private int courseCount;
 
     public Student(String firstName, String lastName, Department department) {
-
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.department = department;
+        this.id = "S" + String.format("%03d", nextId++);
     }
 }
