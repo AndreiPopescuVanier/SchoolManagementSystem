@@ -14,7 +14,7 @@ public class Student {
     private String lastName;
     private Department department;
 
-    @Getter private Course[] courses;
+    @Getter @ToString.Exclude Course[] courses;
     @Getter private int courseCount;
 
     public Student(String firstName, String lastName, Department department) {

@@ -15,7 +15,7 @@ public class Course {
 
     private Department department;
     @Getter @Setter private Teacher teacher;
-    @Getter private Student[] students;
+    @Getter @ToString.Exclude private Student[] students;
     @Getter private int studentCount;
 
     public Course(String name, double credit, Department department) {
