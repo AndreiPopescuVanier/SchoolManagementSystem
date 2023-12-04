@@ -74,7 +74,7 @@ public class SchoolManagementSystem {
 
         Student newStudent = new Student(firstName, lastName, departmentOfStudent);
         students[indexOfFirstNullStudent] = newStudent;
-        System.out.printf("Added student %s successfull!", newStudent);
+        System.out.printf("Added student %s successfully!\n", newStudent);
     }
 
     /**
@@ -140,7 +140,7 @@ public class SchoolManagementSystem {
 
         Teacher newTeacher = new Teacher(firstName, lastName, departmentOfTeacher);
         teachers[indexOfFirstNullTeacher] = newTeacher;
-        System.out.printf("Added teacher %s successfully!", newTeacher);
+        System.out.printf("Added teacher %s successfully!\n", newTeacher);
     }
 
     /**
