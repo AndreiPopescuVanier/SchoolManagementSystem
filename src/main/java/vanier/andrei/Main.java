@@ -1,9 +1,5 @@
 package vanier.andrei;
 
-// BONUS POINTS ASSIGNED IF:
-// 5.n.iv:  If the course has be registered by the student already, it cannot be registered again, print a message.
-// 9.f: Student register course failed, student has registered that course
-
 import vanier.andrei.dto.SchoolManagementSystem;
 
 public class Main {
@@ -93,7 +89,8 @@ public class Main {
         // Test registering courses, should give error (C999 invalid)
         sms.registerCourse("S001", "C999");
 
-        // Test registering courses, should give error (S001 already has C001)
-        sms.registerCourse("S001", "C001");
+        // Test registering courses, should give error
+        sms.registerCourse("S003", "C003");
+        sms.registerCourse("S003", "C003");
     }
 }
