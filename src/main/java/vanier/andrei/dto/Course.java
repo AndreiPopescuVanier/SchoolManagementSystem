@@ -33,9 +33,12 @@ public class Course {
         for (int i = 0; i < students.length; i++) {
             // Because our array is gap-less, first null indicates end
             if (students[i] == null) {
-                studentCount = i + 1;
+                studentCount = i;
                 return;
             }
         }
+
+        // If none are null
+        studentCount = students.length;
     }
 }
